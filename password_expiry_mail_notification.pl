@@ -7,18 +7,18 @@ use MIME::Lite;
 use POSIX;
 
 #ldap params
-my $ldap_host = "ldaps://172.31.1.67";
+my $ldap_host = "ldaps://*.*.*.*";
 my $ldap_port = "636";
 my $seconds_in_a_day = 86400;
-my $ldap_users_dn = "ou=Users,dc=stforge,dc=com";
-my $ldap_users_filter = "(&(memberOf=cn=BugzillaProd,ou=Profiles,dc=stforge,dc=com)(pwdChangedTime=*))";
-my $ldap_policy_dn = "ou=Policies,dc=stforge,dc=com";
+my $ldap_users_dn = "ou=*,dc=*,dc=*";
+my $ldap_users_filter = "(&(memberOf=cn=*,ou=*,dc=*,dc=*)(pwdChangedTime=*))";
+my $ldap_policy_dn = "ou=Policies,dc=*,dc=*";
 my $ldap_policy_filter = "(cn=DefaultPassword)";
-my $ldap_login = "uid=notifications_ldap,ou=Administration,dc=stforge,dc=com";
-my $ldap_passwd = "PJiig2ph";
+my $ldap_login = "uid=notifications_ldap,ou=Administration,dc=*,dc=*";
+my $ldap_passwd = "*";
 
 #server mail address
-my $server_mail = 'stforge.admin@st.com';
+my $server_mail = 'admin@*.com';
 
 my $error_mail_body = "";
 
@@ -26,9 +26,9 @@ my $error_mail_body = "";
 my @days_threshold = (30, 14, 7, 3, 2, 1);
 
 my $log_file = "$0.log";
-my $path_to_attachment = "ressources/STforge_Bugzilla_Passwd_Policy_Guide.pdf";
+my $path_to_attachment = "ressources/Guide.pdf";
 
-my $admin_mail='mohamedamin.doghri@st.com';
+my $admin_mail='mohamed-rafik.benmansour@*.com';
 
 #current date concatenated
 my $current_date = strftime "%Y%m%d", localtime;
